@@ -62,7 +62,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="ACERTO"
+                    android:text="ACERTOS"
                     android:textColor="#070707"
                     android:textSize="20sp" />
             </LinearLayout>
@@ -75,7 +75,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView4"
+                    android:id="@+id/txAcerto"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -114,7 +114,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="ERRO"
+                    android:text="ERROS"
                     android:textColor="#070707"
                     android:textSize="20sp" />
             </LinearLayout>
@@ -127,10 +127,11 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView7"
+                    android:id="@+id/txErro"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="1/10"
+                    android:textColor="#070707"
                     android:textSize="34sp" />
             </LinearLayout>
         </LinearLayout>
