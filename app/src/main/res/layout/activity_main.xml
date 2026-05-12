@@ -71,5 +71,14 @@
             android:backgroundTint="#523232"
             android:text="Iniciar"
             android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#523232"
+            android:text="Configurações"
+            android:textSize="20sp" />
+
     </LinearLayout>
 </LinearLayout>
