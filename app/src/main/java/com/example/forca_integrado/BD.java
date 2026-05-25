@@ -33,7 +33,7 @@ public class BD extends SQLiteOpenHelper {
         db.insert("tabelaPalavra",null,valores);
         db.close();
     }
-    public ArrayList<Palavra> listaPalavra() {
+    public ArrayList<Palavra> listarPalavra() {
         ArrayList<Palavra> lista = new ArrayList<Palavra>();
         SQLiteDatabase db = getReadableDatabase();
         Cursor cursor = db.query("tabelaPalavra", null, null, null, null, null, null);

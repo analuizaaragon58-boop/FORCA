@@ -21,6 +21,8 @@ public class TelaCadastro extends AppCompatActivity implements View.OnClickListe
     private EditText textoDaPalavra;
     private Button btnCadastrar, btnListar;
     private RadioGroup grupo;
+
+    private BD bd;
     private String categoriaSelecionada , palavra;
 
     @SuppressLint("MissingInflatedId")
@@ -34,6 +36,7 @@ public class TelaCadastro extends AppCompatActivity implements View.OnClickListe
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        bd = new BD(TelaCadastro.this);
         textoDaPalavra = findViewById(R.id.textpalavra);
         btnCadastrar = findViewById(R.id.button2);
         btnCadastrar.setOnClickListener(this);
@@ -47,6 +50,35 @@ public class TelaCadastro extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         if (view == btnCadastrar){
 
+            String texto = textoDaPalavra.getText().toString();
+
+            //Vamos testar a caixa de texto para ver se tem conteúdo
+            boolean temTextoDigitado = false;
+            if (texto.isEmpty()) {
+                Toast.makeText(this, "Faltou palavra betinha", Toast.LENGTH_SHORT).show();
+            }else {
+                temTextoDigitado = true;
+            }
+            //vamos testar os rádios para ver se tem alugum selecionado
+            RadioButton r = findViewById(R.id.radioButton);
+            RadioButton r1 = findViewById(R.id.radioButton2);
+            RadioButton r2 = findViewById(R.id.radioButton3);
+            RadioButton r3 = findViewById(R.id.radioButton4);
+            RadioButton r4 = findViewById(R.id.radioButton5);
+
+            boolean temRadioChecado = false;
+            if (r.isChecked()||r1.isChecked()||r2.isChecked()||r3.isChecked()||r4.isChecked()){
+                temRadioChecado = true;
+            } else{
+                Toast.makeText(this, "Faltou marcar categoria", Toast.LENGTH_SHORT).show();
+            }
+            if (temTextoDigitado && temRadioChecado)
+            {
+                //aqui pode salvar no BD
+                Palavra palavra1 = new Palavra();
+                palavra1.setPalavraDigitada(texto);
+                bd.salvarPalavra(palavra1);
+            }
         }
         if (view == btnListar){
 
